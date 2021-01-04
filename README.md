@@ -10,4 +10,8 @@ A typewriter web app for writing short stories with a cyberpunk twist. It will o
 
 ## greeting modal
 
-![greeting modal](https://github.com/atlasneiko/CyberWriter/blob/main/src/welcome_modal..png "greeting modal")
+![greeting modal](https://github.com/atlasneiko/CyberWriter/blob/main/src/welcome_modal.png "greeting modal")
+
+## main page without ui
+
+![main page](https://github.com/atlasneiko/CyberWriter/blob/main/src/main_page.png "main page")
