@@ -1,0 +1,84 @@
+.traveling__typewriterregular {
+	font-family: "traveling__typewriterregular", Arial, Helvetica, sans-serif;
+}
+.audiowideregular {
+	font-family: "audiowideregular", Arial, Helvetica;
+}
+ul {
+	list-style: none;
+	padding-inline-start: 0;
+}
+
+#colors {
+	display: flex;
+	flex-direction: row;
+}
+
+.c1 {
+	color: #ff6e27;
+}
+
+.c2 {
+	color: #fbf665;
+}
+
+.c3 {
+	color: #73fffe;
+}
+
+.c4 {
+	color: #6287f8;
+}
+
+.c5 {
+	color: #383e65;
+}
+
+.c6 {
+	color: #020104;
+}
+
+.c7 {
+	color: #22232a;
+}
+
+.c8 {
+	color: #46413b;
+}
+
+.c9 {
+	color: #bebab4;
+}
+
+.c10 {
+	color: #f7f7f6;
+}
+
+#u1 {
+	background-color: #ff6e27;
+}
+#u2 {
+	background-color: #fbf665;
+}
+#u3 {
+	background-color: #73fffe;
+}
+#u4 {
+	background-color: #6287f8;
+}
+#u5 {
+	background-color: #383e65;
+}
+
+colors {
+	color: #ff6e27;
+	color: #fbf665;
+	color: #73fffe;
+	color: #6287f8;
+	color: #383e65;
+	color: #020104;
+	color: #22232a;
+	color: #46413b;
+	color: #bebab4;
+	color: #f7f7f6;
+}
