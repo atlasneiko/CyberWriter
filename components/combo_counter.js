@@ -13,18 +13,24 @@ class ComboCounter extends HTMLElement {
     this.shadowRoot.appendChild(comboTemplate.content.cloneNode(true));
 
     this.comboTimer = 0;
-    this.counting = false
-
+    this.timerId = 0;
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   handleKeyDown(e) {
-    this.comboTimer++;
-    console.log(this.comboTimer)
-    // var myInterval = setInterval(()=>{this.comboTimer}, 1000)
+    clearInterval(this.timerId);
+    this.comboTimer = 2;
+    var intervalId = setInterval(() => {
+      if (this.comboTimer <= 0) {
+        clearInterval(intervalId);
+      }
+      console.log(this.comboTimer)
+      this.comboTimer--;
 
-
+    }, 1000);
+    this.timerId = intervalId
   }
+
   connectedCallback() {
     const combo = this.shadowRoot.querySelector('#combo_counter');
     document.addEventListener('keydown', (event) => this.handleKeyDown(event))
