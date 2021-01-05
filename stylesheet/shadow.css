@@ -1,0 +1,217 @@
+#modal-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vw;
+	z-index: 2;
+	background-color: rgb(2 1 4 / 0.9);
+}
+
+#welcome-modal {
+	position: relative;
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid #73fffe;
+}
+
+#modal-title {
+	font-family: cyberpunkregular, sans-serif;
+	text-align: center;
+	color: #ff6e27;
+	background-image: radial-gradient(
+		ellipse 50% 35% at 50% 50%,
+		#ff6e27,
+		transparent
+	);
+	text-shadow: 0 0 0.6rem #fbf665, 0 0 1.5rem #ff6e27,
+		-0.2rem 0.1rem 1rem #ff6e27, 0.2rem 0.1rem 1rem #ff6e27,
+		0 -0.5rem 2rem #a7491a, 0 0.5rem 3rem #a7491a;
+	word-wrap: break-word;
+	animation: shine 2s forwards, flicker 3s infinite;
+}
+
+.s-flicker {
+	animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.f-flicker {
+	animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+@keyframes shine {
+	0% {
+		color: #411d0b;
+		text-shadow: none;
+	}
+	100% {
+		color: #fbf665;
+		text-shadow: 0 0 0.6rem #fbf665, 0 0 1.5rem #ff6e27,
+			-0.2rem 0.1rem 1rem #ff6e27, 0.2rem 0.1rem 1rem #ff6e27,
+			0 -0.5rem 2rem #a7491a, 0 0.5rem 3rem #a7491a;
+	}
+}
+
+@keyframes blink {
+	0%,
+	22%,
+	36%,
+	75% {
+		color: #fbf665;
+		text-shadow: 0 0 0.6rem #fbf665, 0 0 1.5rem #ff6e27,
+			-0.2rem 0.1rem 1rem #ff6e27, 0.2rem 0.1rem 1rem #ff6e27,
+			0 -0.5rem 2rem #a7491a, 0 0.5rem 3rem #a7491a;
+	}
+	28%,
+	33% {
+		color: #ff6e27;
+		text-shadow: none;
+	}
+	82%,
+	97% {
+		color: #a7491a;
+		text-shadow: none;
+	}
+}
+
+@keyframes flicker {
+	from {
+		opacity: 1;
+	}
+
+	4% {
+		opacity: 0.9;
+	}
+
+	6% {
+		opacity: 0.85;
+	}
+
+	8% {
+		opacity: 0.95;
+	}
+
+	10% {
+		opacity: 0.9;
+	}
+
+	11% {
+		opacity: 0.922;
+	}
+
+	12% {
+		opacity: 0.9;
+	}
+
+	14% {
+		opacity: 0.95;
+	}
+
+	16% {
+		opacity: 0.98;
+	}
+
+	17% {
+		opacity: 0.9;
+	}
+
+	19% {
+		opacity: 0.93;
+	}
+
+	20% {
+		opacity: 0.98;
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	26% {
+		opacity: 0.94;
+	}
+
+	28% {
+		opacity: 0.96;
+	}
+
+	37% {
+		opacity: 0.93;
+	}
+
+	38% {
+		opacity: 0.5;
+	}
+
+	39% {
+		opacity: 0.95;
+	}
+
+	42% {
+		opacity: 1;
+	}
+
+	44% {
+		opacity: 0.96;
+	}
+
+	46% {
+		opacity: 0.93;
+	}
+
+	56% {
+		opacity: 0.9;
+	}
+
+	58% {
+		opacity: 0.9;
+	}
+
+	60% {
+		opacity: 0.99;
+	}
+
+	68% {
+		opacity: 1;
+	}
+
+	70% {
+		opacity: 0.9;
+	}
+
+	72% {
+		opacity: 0.96;
+	}
+
+	93% {
+		opacity: 0.92;
+	}
+
+	95% {
+		opacity: 0.96;
+	}
+
+	97% {
+		opacity: 0.92;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+#welcome-modal > p {
+	color: #73fffe;
+}
+colors {
+	color: #ff6e27;
+	color: #fbf665;
+	color: #73fffe;
+	color: #6287f8;
+	color: #383e65;
+	color: #020104;
+	color: #22232a;
+	color: #46413b;
+	color: #bebab4;
+	color: #f7f7f6;
+}
