@@ -26,7 +26,7 @@ class WelcomeModal extends HTMLElement {
   constructor() {
     super();
     this.showInfo = true
-    
+
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.appendChild(modalTemplate.content.cloneNode(true));
     // * use querySelector to pick h3 and then give innerText 

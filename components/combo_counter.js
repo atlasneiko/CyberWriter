@@ -1,9 +1,9 @@
 const comboTemplate = document.createElement("template");
 comboTemplate.innerHTML = `
-  <link rel="stylesheet" href="../stylesheet/combo_counter.css"
-  <div id="combo_container>
-    <p id="combo_counter">hi</p>
-  </div>
+  <link rel="stylesheet" href="../stylesheet/combo_counter.css" />
+		<div id="combo_container">
+			<p id="combo_counter"></p>
+  	</div>
 `;
 
 class ComboCounter extends HTMLElement {
@@ -11,10 +11,10 @@ class ComboCounter extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(comboTemplate.content.cloneNode(true));
-
     this.comboTimer = 0;
     this.timerId = 0;
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    // console.log(this.shadowRoot)
   }
 
   handleKeyDown(e) {
@@ -24,7 +24,8 @@ class ComboCounter extends HTMLElement {
       if (this.comboTimer <= 0) {
         clearInterval(intervalId);
       }
-      console.log(this.comboTimer)
+      this.shadowRoot.querySelector("#combo_counter").innerText = this.comboTimer
+      // console.log(this.comboTimer)
       this.comboTimer--;
 
     }, 1000);
@@ -34,7 +35,6 @@ class ComboCounter extends HTMLElement {
   connectedCallback() {
     const combo = this.shadowRoot.querySelector('#combo_counter');
     document.addEventListener('keydown', (event) => this.handleKeyDown(event))
-    console.log("hi")
   }
 }
 
