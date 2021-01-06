@@ -74,6 +74,19 @@ ul {
 	background-color: #383e65;
 }
 
+.volume-bar {
+	display: flex;
+	flex-direction: row;
+}
+.volume {
+	margin: 0 0.5px;
+	width: 0;
+	height: 30px;
+	border-width: 10px;
+	border-style: none dotted none dotted;
+	border-image: linear-gradient(to bottom, #11efc6, #db528c, #e50030) 1 100%;
+}
+
 colors {
 	color: #ff6e27;
 	color: #fbf665;

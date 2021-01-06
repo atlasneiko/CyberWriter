@@ -18,23 +18,23 @@ class Textarea extends HTMLElement {
   }
 
   handleKeyDown() {
-    // console.log(this.shadowRoot.getElementById("text-area").innerHTML.split("<br>").filter(el => el !== ""));
-    // console.log(this.shadowRoot.getElementById("text-area").innerHTML.split("<br>").filter(el => el !== "").length);
+    const text = this.shadowRoot.getElementById("text-area").innerHTML.split("<br>").filter(el => el !== "")
+    localStorage.setItem('textArea', this.shadowRoot.getElementById("text-area").innerHTML)
+    console.log(localStorage.textArea)
     const keyStroke = new CustomEvent("keyStroke",
       {
         bubbles: true,
         composed: true,
         detail: {
-          text: this.shadowRoot.getElementById("text-area").innerHTML.split("<br>").filter(el => el !== "")
+          text: text
         }
       });
-    console.log(keyStroke)
     this.dispatchEvent(keyStroke);
   }
 
   connectedCallback() {
+    this.shadowRoot.querySelector("#text-area").innerHTML = localStorage.getItem("textArea")
     document.addEventListener('keydown', () => this.handleKeyDown())
-    window.textarea = this.shadowRoot.getElementById('text-area');
   }
 }
 

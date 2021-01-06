@@ -7,20 +7,28 @@ pcTemplate.innerHTML = `
   </div>
 `;
 
+
+//TODO 1. total word count
+//TODO 2. array of paragraph size
+//TODO 3. 
+
+
 class pCounter extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(pcTemplate.content.cloneNode(true));
 
+    document.addEventListener("keyStroke", event => {
+      const text = event.detail;
+      this.text = text;
+      console.log(this.text)
+    })
 
   }
 
   connectedCallback() {
-    document.addEventListener("keyStroke", event => {
-      const text = event.detail;
-      console.log(text)
-    })
+
   }
 
 }
