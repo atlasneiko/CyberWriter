@@ -1,3 +1,7 @@
+body {
+	background-color: #383e65;
+}
+
 .traveling__typewriterregular {
 	font-family: "traveling__typewriterregular", Arial, Helvetica, sans-serif;
 }
