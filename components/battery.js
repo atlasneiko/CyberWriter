@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./src/fonts/stylesheet.css" />
-		<link rel="stylesheet" href="./stylesheet/body.css" />
-		<link
-			rel="shorcut icon"
-			type="image/png"
-			href="./src/icon/favicon-32x32.png"
-		/>
-		<title>CyberWriter</title>
-	</head>
-	<body>
-		<!-- rendered -->
-		<!-- <div id="battery-container">
+pcTemplate = document.createElement('template');
+pcTemplate.innerHTML = `
+  <link rel="stylesheet" href="../stylesheet/battery.css" />
+
+  				<div id="battery-container">
 			<div class="b-pair">
 				<div class="battery-connector-t b-flicker-f"></div>
 				<div class="battery-set">
@@ -296,101 +284,60 @@
 				</div>
 			</dvi>
 			<div id="for-deploy">
-				<div id="sync-battery" class="empty-deploy b-flicker-deploy" id="b49">
+				<div  class="empty-deploy b-flicker-deploy" id="b49">
 					<div class="battery-tab"></div>
 					<p>syncing</p>
 				</div>
-				<div id="deploy-battery" class="empty-deploy b-flicker-deploy" id="b50">
+				<div  class="empty-deploy b-flicker-deploy" id="b50">
 					<div class="battery-tab"></div>
 					<p>ready for deploy</p>
 				</div>
 			</div>
-		</div> -->
-		<battery-tab></battery-tab>
-		<br />
-		<div class="volume-bar">
-			<div class="volume"></div>
-			<div class="volume"></div>
-			<div class="volume"></div>
-			<div class="volume"></div>
-			<div class="volume"></div>
-			<div class="volume"></div>
 		</div>
-		<combo-counter></combo-counter>
+`;
 
-		<p-counter></p-counter>
 
-		<time-line></time-line>
+//TODO 1. total word count
+//TODO 2. array of paragraph size
 
-		<text-area></text-area>
-		<welcome-modal> </welcome-modal>
-		<ul id="colors">
-			<ul id="u1">
-				<li class="c1">color#1</li>
-				<li class="c2">color#2</li>
-				<li class="c3">color#3</li>
-				<li class="c4">color#4</li>
-				<li class="c5">color#5</li>
-				<li class="c6">color#6</li>
-				<li class="c7">color#7</li>
-				<li class="c8">color#8</li>
-				<li class="c9">color#9</li>
-				<li class="c10">color#10</li>
-			</ul>
-			<ul id="u2">
-				<li class="c1">color#1</li>
-				<li class="c2">color#2</li>
-				<li class="c3">color#3</li>
-				<li class="c4">color#4</li>
-				<li class="c5">color#5</li>
-				<li class="c6">color#6</li>
-				<li class="c7">color#7</li>
-				<li class="c8">color#8</li>
-				<li class="c9">color#9</li>
-				<li class="c10">color#10</li>
-			</ul>
-			<ul id="u3">
-				<li class="c1">color#1</li>
-				<li class="c2">color#2</li>
-				<li class="c3">color#3</li>
-				<li class="c4">color#4</li>
-				<li class="c5">color#5</li>
-				<li class="c6">color#6</li>
-				<li class="c7">color#7</li>
-				<li class="c8">color#8</li>
-				<li class="c9">color#9</li>
-				<li class="c10">color#10</li>
-			</ul>
-			<ul id="u4">
-				<li class="c1">color#1</li>
-				<li class="c2">color#2</li>
-				<li class="c3">color#3</li>
-				<li class="c4">color#4</li>
-				<li class="c5">color#5</li>
-				<li class="c6">color#6</li>
-				<li class="c7">color#7</li>
-				<li class="c8">color#8</li>
-				<li class="c9">color#9</li>
-				<li class="c10">color#10</li>
-			</ul>
-			<ul id="u5">
-				<li class="c1">color#1</li>
-				<li class="c2">color#2</li>
-				<li class="c3">color#3</li>
-				<li class="c4">color#4</li>
-				<li class="c5">color#5</li>
-				<li class="c6">color#6</li>
-				<li class="c7">color#7</li>
-				<li class="c8">color#8</li>
-				<li class="c9">color#9</li>
-				<li class="c10">color#10</li>
-			</ul>
-		</ul>
-		<!-- import after template declared -->
-		<script src="./components/welcome_modal.js"></script>
-		<script src="./components/text_area.js"></script>
-		<script src="./components/combo_counter.js"></script>
-		<script src="./components/stroke_timeline.js"></script>
-		<script src="./components/battery.js"></script>
-	</body>
-</html>
+
+
+class Battery extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(pcTemplate.content.cloneNode(true));
+    // this.text = [];
+
+    // this.wordCount = this.text.join("").split(" ").length()
+  }
+
+  connectedCallback() {
+    document.addEventListener("keyStroke", event => {
+      this.text = event.detail.text;
+      this.batteryCount = Math.floor(this.text.join(" ").split(" ").length / 100)
+      console.log("wordCount/100", this.batteryCount);
+      let res = 0
+
+      for (let i = 1; i <= 50; i++) {
+        if (i > this.batteryCount) {
+          const emptyBattery = this.shadowRoot.querySelector(`#b${i}`)
+          emptyBattery.classList.remove("empty-battery");
+          emptyBattery.classList.remove("full-battery");
+          emptyBattery.classList.add("empty-battery");
+        } else {
+          const fullBattery = this.shadowRoot.querySelector(`#b${i}`)
+          fullBattery.classList.remove("full-battery");
+          fullBattery.classList.remove("empty-battery");
+          fullBattery.classList.add("full-battery");
+        }
+      }
+      // console.log(this.shadowRoot.querySelector("#for-deploy"));
+
+
+    })
+  }
+
+}
+
+window.customElements.define('battery-tab', Battery);

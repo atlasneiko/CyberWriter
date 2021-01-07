@@ -20,7 +20,6 @@ class Textarea extends HTMLElement {
   handleKeyDown() {
     const text = this.shadowRoot.getElementById("text-area").innerHTML.split("<br>").filter(el => el !== "")
     localStorage.setItem('textArea', this.shadowRoot.getElementById("text-area").innerHTML)
-    console.log(localStorage.textArea)
     const keyStroke = new CustomEvent("keyStroke",
       {
         bubbles: true,
@@ -35,6 +34,9 @@ class Textarea extends HTMLElement {
   connectedCallback() {
     this.shadowRoot.querySelector("#text-area").innerHTML = localStorage.getItem("textArea")
     document.addEventListener('keydown', () => this.handleKeyDown())
+  }
+  disconnectedCallback() {
+    localStorage.setItem('textArea', this.shadowRoot.getElementById("text-area").innerHTML)
   }
 }
 

@@ -3,4 +3,6 @@
 	width: 80vw;
 	height: 600px;
 	margin: 0 auto;
+	overflow: auto;
+	color: #bd7408;
 }

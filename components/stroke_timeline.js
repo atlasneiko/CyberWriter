@@ -26,7 +26,7 @@ class Timeline extends HTMLElement {
         const newItem = document.createElement("li")
         const newCount = document.createElement("div")
         newCount.classList.add("timeline-item")
-        newCount.style.height = (count * 2 + 1) + "px"
+        newCount.style.height = (count * 5 + 1) + "px"
         newItem.appendChild(newCount)
         newTimeline.appendChild(newItem)
       })
