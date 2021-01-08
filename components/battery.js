@@ -303,40 +303,41 @@ pcTemplate.innerHTML = `
 
 
 class Battery extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(pcTemplate.content.cloneNode(true));
-    // this.text = [];
+	constructor() {
+		super();
+		this.attachShadow({ mode: 'open' });
+		this.shadowRoot.appendChild(pcTemplate.content.cloneNode(true));
+		// this.text = [];
 
-    // this.wordCount = this.text.join("").split(" ").length()
-  }
+		// this.wordCount = this.text.join("").split(" ").length()
+	}
 
-  connectedCallback() {
-    document.addEventListener("keyStroke", event => {
-      this.text = event.detail.text;
-      this.batteryCount = Math.floor(this.text.join(" ").split(" ").length / 100)
-      console.log("wordCount/100", this.batteryCount);
-      let res = 0
+	connectedCallback() {
+		document.addEventListener("keyStroke", event => {
+			this.text = event.detail.text;
+			this.batteryCount = Math.floor(this.text.join(" ").split(" ").length / 100)
 
-      for (let i = 1; i <= 50; i++) {
-        if (i > this.batteryCount) {
-          const emptyBattery = this.shadowRoot.querySelector(`#b${i}`)
-          emptyBattery.classList.remove("empty-battery");
-          emptyBattery.classList.remove("full-battery");
-          emptyBattery.classList.add("empty-battery");
-        } else {
-          const fullBattery = this.shadowRoot.querySelector(`#b${i}`)
-          fullBattery.classList.remove("full-battery");
-          fullBattery.classList.remove("empty-battery");
-          fullBattery.classList.add("full-battery");
-        }
-      }
-      // console.log(this.shadowRoot.querySelector("#for-deploy"));
+			console.log()
+			// console.log(this.batteryCount)
+			let res = 0
+			for (let i = 1; i <= 50; i++) {
+				if (i > this.batteryCount) {
+					const emptyBattery = this.shadowRoot.querySelector(`#b${i}`)
+					emptyBattery.classList.remove("empty-battery");
+					emptyBattery.classList.remove("full-battery");
+					emptyBattery.classList.add("empty-battery");
+				} else {
+					const fullBattery = this.shadowRoot.querySelector(`#b${i}`)
+					fullBattery.classList.remove("full-battery");
+					fullBattery.classList.remove("empty-battery");
+					fullBattery.classList.add("full-battery");
+				}
+			}
+			// console.log(this.shadowRoot.querySelector("#for-deploy"));
 
 
-    })
-  }
+		})
+	}
 
 }
 

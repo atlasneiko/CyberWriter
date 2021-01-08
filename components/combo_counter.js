@@ -4,6 +4,44 @@ comboTemplate.innerHTML = `
 		<div id="combo_container">
       <p id="combo_counter">0</p>
       <p id="combo_countdown">0</p>
+      <div id="effects">
+      
+        <div id="combo-sonar">
+          <div id="pulse"></div>
+        </div>
+        <div id="water-drop">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="circle-rainbow">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="clock">
+          <div class="face face1">
+            <div class="circle"></div>
+          </div>
+          <div class="face face2">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
   	</div>
 `;
 
@@ -22,7 +60,7 @@ class ComboCounter extends HTMLElement {
   handleKeyDown(e) {
     clearInterval(this.timerId);
     this.comboCount++;
-    this.comboTimer = 2;
+    this.comboTimer = 2000;
     this.shadowRoot.querySelector("#combo_counter").innerText = this.comboCount
     var intervalId = setInterval(() => {
       if (this.comboTimer <= 0) {
@@ -32,9 +70,9 @@ class ComboCounter extends HTMLElement {
       }
       // console.log(this.comboTimer)
       this.shadowRoot.querySelector("#combo_countdown").innerText = this.comboTimer
-      this.comboTimer--;
+      this.comboTimer -= 10;
 
-    }, 1000);
+    }, 10);
     this.timerId = intervalId
   }
 

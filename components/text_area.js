@@ -18,7 +18,9 @@ class Textarea extends HTMLElement {
   }
 
   handleKeyDown() {
-    const text = this.shadowRoot.getElementById("text-area").innerHTML.split("<br>").filter(el => el !== "")
+    const text = this.shadowRoot.getElementById("text-area").innerHTML.split("</p>").filter(el => el !== "")
+
+
     localStorage.setItem('textArea', this.shadowRoot.getElementById("text-area").innerHTML)
     const keyStroke = new CustomEvent("keyStroke",
       {
@@ -34,6 +36,7 @@ class Textarea extends HTMLElement {
   connectedCallback() {
     this.shadowRoot.querySelector("#text-area").innerHTML = localStorage.getItem("textArea")
     document.addEventListener('keydown', () => this.handleKeyDown())
+    window.addEventListener('load', () => this.handleKeyDown())
   }
   disconnectedCallback() {
     localStorage.setItem('textArea', this.shadowRoot.getElementById("text-area").innerHTML)

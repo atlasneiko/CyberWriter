@@ -74,6 +74,72 @@ ul {
 	background-color: #383e65;
 }
 
+/* sonar radar */
+#sonar {
+	border: 1px solid #73fffe;
+	height: 101px;
+	width: 101px;
+	margin-top: 30px;
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+}
+#sonar-group-1 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+#sonar-group-2 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+#pulse {
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	overflow: hidden;
+	margin-top: -50px;
+}
+#pulse-1 {
+	border-radius: 50%;
+	margin: 50px;
+	height: 1px;
+	width: 1px;
+	animation: pulse 3s linear infinite;
+	position: absolute;
+}
+#pulse-2 {
+	border-radius: 50%;
+	height: 1px;
+	width: 1px;
+	animation: pulse 3s linear infinite;
+	animation-delay: 0.1s;
+}
+
+.sonar-slot {
+	height: 9.59px;
+	width: 9.58px;
+	border: 0.1px solid #73fffe;
+	display: inline-block;
+	margin: 0;
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(255, 110, 39, 0.3);
+	}
+	40% {
+		box-shadow: 0 0 0 80px rgba(255, 110, 39, 0);
+	}
+	80% {
+		box-shadow: 0 0 0 80px rgba(255, 110, 39, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(255, 110, 39, 0);
+	}
+}
+
+/* volume bar sample */
 .volume-bar {
 	display: flex;
 	flex-direction: row;
