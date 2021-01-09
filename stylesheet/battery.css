@@ -2,87 +2,100 @@
 .empty-battery {
 	z-index: 3;
 	background-color: #d7071e;
-	box-shadow: 1px 1px #680009;
-	height: 2px;
-	width: 10px;
-	margin-bottom: 3px;
+	box-shadow: 5px 5px #680009;
+	height: 10px;
+	width: 50px;
+	margin-bottom: 15px;
 }
 
 .full-battery {
 	z-index: 3;
 	background-color: #39ffae;
-	box-shadow: 1px 1px #1c8e5b;
-	height: 2px;
-	width: 10px;
-	margin-bottom: 3px;
+	box-shadow: 5px 5px #1c8e5b;
+	height: 10px;
+	width: 50px;
+	margin-bottom: 15px;
 }
 /* battery components start */
 #battery-container {
 	display: flex;
-	margin-top: 30px;
+	position: relative;
+	top: 120px;
+	right: 35%;
 }
-.b-pair {
+.b-pair1 {
 	display: flex;
-	margin-left: -16px;
+	position: absolute;
+	left: 15%;
+}
+.b-pair2 {
+	display: flex;
+	position: absolute;
+	left: 50%;
 }
 .battery-set {
 	margin-right: 3px;
 }
+.bs2 {
+	margin-left: 20px;
+}
 .battery-tab {
 	z-index: 4;
-	height: 0.5px;
-	width: 2px;
+	height: 5px;
+	width: 20px;
+	position: absolute;
 	background-color: #bd7408;
-	box-shadow: 0.3px 0.3px #724008;
+	box-shadow: 2px 2px #724008;
 }
 .battery-link-front {
-	width: 1px;
-	height: 0.3px;
+	width: 10px;
+	height: 3px;
 	background-color: #bd7408;
-	box-shadow: 1px 1px #724008;
-	left: -2px;
+	box-shadow: 5px 5px #724008;
 	float: left;
 	position: relative;
-	top: -2px;
+	left: -15px;
+	top: -10px;
 }
 .battery-connector-t {
-	width: 14px;
-	height: 3px;
-	border-top: 0.5px solid #bd7408;
-	border-left: 0.5px solid #bd7408;
-	border-right: 0.5px solid #bd7408;
+	width: 70px;
+	height: 15px;
+	border-top: 5px solid #bd7408;
+	border-left: 5px solid #bd7408;
+	border-right: 5px solid #bd7408;
 	position: relative;
-	top: -6px;
-	left: 19px;
-	border-radius: 1px 1px 0 0;
-	box-shadow: 0.5px -0.5px #724008;
+	border-radius: 5px 5px 0 0;
+	box-shadow: 2px -2px #724008;
+	left: 100px;
+	top: -30px;
 }
 .battery-connector-b {
-	width: 14px;
-	height: 3px;
-	border-bottom: 0.5px solid #bd7408;
-	border-left: 0.5px solid #bd7408;
-	border-right: 0.5px solid #bd7408;
-	border-radius: 0 0 1px 1px;
+	width: 70px;
+	height: 15px;
+	border-bottom: 5px solid #bd7408;
+	border-left: 5px solid #bd7408;
+	border-right: 5px solid #bd7408;
+	border-radius: 0 0 5px 5px;
 	position: absolute;
-	left: 23px;
-	top: 90px;
-	box-shadow: 0.5px 0.5px #724008;
+	box-shadow: 2px 2px #724008;
+	bottom: -19px;
+	right: -45px;
 }
 #for-deploy {
 	transform: rotate(90deg);
-	font-size: 2px;
+	font-size: 12px;
 	color: #bebab4;
-	height: 3px;
-	width: 63px;
+	height: 30px;
+	width: 300px;
 	display: flex;
 	justify-content: space-around;
-	margin-top: 28px;
-	margin-left: -29px;
+	position: absolute;
+	top: 135px;
+	right: -180px;
 }
 #for-deploy > div {
 	display: flex;
-	justify-content: space-around;
+	justify-content: end;
 }
 
 #for-deploy p {
@@ -93,15 +106,15 @@
 .empty-deploy {
 	background-color: #d7071e;
 	box-shadow: 1px 1px #680009;
-	height: 2px;
-	width: 20px;
+	height: 10px;
+	width: 100px;
 }
 .ready-deploy {
 	background-color: #39ffae;
 	box-shadow: 1px 1px #1c8e5b;
-	height: 2px;
-	width: 20px;
-	margin-bottom: 3px;
+	height: 10px;
+	width: 100px;
+	margin-bottom: 30px;
 }
 /* #sync-battery {
 }

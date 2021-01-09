@@ -1,38 +1,41 @@
 #sonar {
-	border: 1px solid #73fffe;
-	height: 101px;
-	width: 101px;
-	margin-top: 30px;
-	/* display: flex; */
-	/* flex-wrap: wrap; */
+	/* border: 1px solid #73fffe; */
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	top: 700px;
+	right: 190px;
 }
 
 #sonar-group-1 {
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 #sonar-group-2 {
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 #pulse {
 	position: absolute;
-	height: 100px;
-	width: 100px;
+	height: 150px;
+	width: 150px;
 	overflow: hidden;
-	margin-top: -50px;
+	top: 0px;
 }
 #pulse-1 {
 	border-radius: 50%;
-	margin: 50px;
+	margin: 75px;
 	height: 1px;
 	width: 1px;
 	animation: pulse 3s linear infinite;
 	position: absolute;
 }
 #pulse-2 {
+	top: 50%;
 	border-radius: 50%;
 	height: 1px;
 	width: 1px;
@@ -41,8 +44,8 @@
 }
 
 .sonar-slot {
-	height: 9.59px;
-	width: 9.58px;
+	height: 13px;
+	width: 8.5%;
 	border: 0.1px solid #73fffe;
 	display: inline-block;
 	margin: 0;
@@ -98,10 +101,10 @@ colors {
 		box-shadow: 0 0 0 0 rgba(255, 110, 39, 0.3);
 	}
 	40% {
-		box-shadow: 0 0 0 80px rgba(255, 110, 39, 0);
+		box-shadow: 0 0 0 107px rgba(255, 110, 39, 0);
 	}
 	80% {
-		box-shadow: 0 0 0 80px rgba(255, 110, 39, 0);
+		box-shadow: 0 0 0 107px rgba(255, 110, 39, 0);
 	}
 	100% {
 		box-shadow: 0 0 0 0 rgba(255, 110, 39, 0);

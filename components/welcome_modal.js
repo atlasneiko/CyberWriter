@@ -6,13 +6,14 @@ modalTemplate.innerHTML = `
     <div id="welcome-modal">
 
       <h1 id="modal-title">
-        <span class="f-flicker">C</span>Y<span class="s-flicker">B</span>ERWri<span class="f-flicker">TER</span>
+        <span class="f-flicker">C</span>Y<span class="s-flicker">B</span><span class="f-flicker">ERW</span><span class="s-flicker">RI</span><span class="f-flicker">TER</span>
       </h1>
-      <p>Due to hard drive shortage, you are only allowed to keep one story at a time and limited to 5000 words.</p>
-      <button class="toggle-modal">Get back to work</button>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; Due to hard drive shortage, each worker are only allowed to keep one story at a time and limited to 5000 words. It is highly advisable that workers utilize the UI to optimize their performance. All of your progress will be saved in real time. So there is no reason to panic or call tech support.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Now, get back to work.</p>
+      <button class="toggle-modal close-tutorial">Get back to work</button>
     </div>
   </div>
-  <button class="toggle-modal">tutorial</button>
+  <button class="toggle-modal open-tutorial">tutorial</button>
 `;
 {/* <span class="f-flicker">b</span>rea < span class="flicker" > t</span > he */ }
 //  <h3 class="name"></h3>

@@ -15,12 +15,16 @@ class Textarea extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(textTemplate.content.cloneNode(true));
     this.handleKeyDown = this.handleKeyDown.bind(this);
+
   }
+
+
+
 
   handleKeyDown() {
     const text = this.shadowRoot.getElementById("text-area").innerHTML.split("</p>").filter(el => el !== "")
-
-
+    const sound = new Audio("../src/sound/keystroke.mp3")
+    sound.setAttribute("autoplay", false);
     localStorage.setItem('textArea', this.shadowRoot.getElementById("text-area").innerHTML)
     const keyStroke = new CustomEvent("keyStroke",
       {

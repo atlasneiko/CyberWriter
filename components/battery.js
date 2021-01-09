@@ -3,7 +3,7 @@ pcTemplate.innerHTML = `
   <link rel="stylesheet" href="../stylesheet/battery.css" />
 
   				<div id="battery-container">
-			<div class="b-pair">
+			<div class="b-pair1">
 				<div class="battery-connector-t b-flicker-f"></div>
 				<div class="battery-set">
 					<div class="battery">
@@ -67,7 +67,7 @@ pcTemplate.innerHTML = `
 						</div>
 					</div>
 				</div>
-				<div class="battery-set">
+				<div class="battery-set bs2">
 					<div class="battery">
 						<div class="battery-link-front"></div>
 						<div class="empty-battery battery-left b-flicker-deploy" id="b13">
@@ -144,7 +144,7 @@ pcTemplate.innerHTML = `
 				<div class="battery-connector-b b-flicker-f"></div>
 			</div>
 
-			<dvi class="b-pair">
+			<dvi class="b-pair2">
 				<div class="battery-connector-t b-flicker-f"></div>
 				<div class="battery-set">
 					<div class="battery">
@@ -208,7 +208,7 @@ pcTemplate.innerHTML = `
 						</div>
 					</div>
 				</div>
-				<div class="battery-set">
+				<div class="battery-set bs2">
 					<div class="battery">
 						<div class="battery-link-front"></div>
 						<div class="empty-battery battery-left b-flicker-f" id="b37">
@@ -285,12 +285,12 @@ pcTemplate.innerHTML = `
 			</dvi>
 			<div id="for-deploy">
 				<div  class="empty-deploy b-flicker-deploy" id="b49">
+				<p>syncing</p>
 					<div class="battery-tab"></div>
-					<p>syncing</p>
 				</div>
 				<div  class="empty-deploy b-flicker-deploy" id="b50">
+				<p>ready for deploy</p>
 					<div class="battery-tab"></div>
-					<p>ready for deploy</p>
 				</div>
 			</div>
 		</div>

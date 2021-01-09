@@ -5,13 +5,43 @@ ul {
 }
 .timeline-item {
 	display: block;
-	background-color: #6287f8;
-	width: 3px;
+	width: 8px;
+	animation: bounce 1.5s ease-in-out infinite;
 }
 
 #timeline-container {
 	height: 100px;
-	border-top: 1px solid black;
 	display: flex;
 	align-items: flex-end;
+	position: fixed;
+	bottom: 0;
+}
+
+@keyframes bounce {
+	0% {
+		transform: scaleY(1);
+		background-color: #73fffe;
+	}
+	20% {
+		transform: scaleY(1.2);
+		background-color: #fbf665;
+	}
+	40% {
+		transform: scaleY(0.8);
+		background-color: #73fffe;
+	}
+
+	60% {
+		transform: scaleY(0.6);
+		background-color: #6287f8;
+	}
+
+	80% {
+		transform: scaleY(0.9);
+		background-color: #73fffe;
+	}
+	100% {
+		transform: scaleY(1.2);
+		background-color: #6287f8;
+	}
 }

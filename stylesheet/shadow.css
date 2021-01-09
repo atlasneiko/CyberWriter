@@ -7,16 +7,60 @@
 	z-index: 5;
 	background-color: rgb(2 1 4 / 0.9);
 }
+button {
+	font-family: "audiowideregular", Arial, Helvetica;
+}
+
+.open-tutorial {
+	position: absolute;
+	top: 30px;
+	left: 50px;
+	background-color: transparent;
+	border: 0;
+	color: #383e65;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.open-tutorial:hover {
+	color: #73fffe;
+}
+.close-tutorial {
+	position: relative;
+	left: 50%;
+	right: 50%;
+	transform: translate(-50%, -50%);
+	margin-bottom: 20px;
+	background-color: transparent;
+	border: 0;
+	color: #ff6e27;
+	font-size: 2em;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+.close-tutorial:hover {
+	color: rgb(162, 21, 6);
+}
 
 #welcome-modal {
 	position: relative;
 	width: 50%;
 	margin: 0 auto;
-	border: 1px solid #73fffe;
+	font-family: "audiowideregular", Arial, Helvetica;
+	top: 300px;
+}
+
+#welcome-modal p {
+	display: block;
+	width: 85%;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	line-height: 2em;
 }
 
 #modal-title {
 	font-family: cyberpunkregular, sans-serif;
+	font-size: 3em;
 	text-align: center;
 	color: #ff6e27;
 	background-image: radial-gradient(
@@ -29,6 +73,7 @@
 		0 -0.5rem 2rem #a7491a, 0 0.5rem 3rem #a7491a;
 	word-wrap: break-word;
 	animation: shine 2s forwards, flicker 3s infinite;
+	margin-bottom: 50px;
 }
 
 .s-flicker {
@@ -73,8 +118,6 @@
 		text-shadow: none;
 	}
 }
-
-
 
 #welcome-modal > p {
 	color: #73fffe;

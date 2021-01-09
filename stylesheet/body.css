@@ -424,3 +424,11 @@ colors {
 	color: #bebab4;
 	color: #f7f7f6;
 }
+
+aside {
+	width: 400px;
+	position: relative;
+	right: 100%;
+	left: 79%;
+	/* border: 1px solid #73fffe; */
+}

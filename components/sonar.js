@@ -316,59 +316,56 @@ sonarTemplate.innerHTML = `
 `
 
 class SonarRadar extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(sonarTemplate.content.cloneNode(true));
-    document.addEventListener("keyStroke", this.handleInput.bind(this))
+	constructor() {
+		super();
+		this.attachShadow({ mode: 'open' });
+		this.shadowRoot.appendChild(sonarTemplate.content.cloneNode(true));
+		document.addEventListener("keyStroke", this.handleInput.bind(this))
 
-    this.map = {}
-    this.loading = false;
-  }
+		this.map = {}
+		this.loading = false;
+	}
 
-  handleInput(event) {
-    if (!this.loading) {
-      this.loading = true;
+	handleInput(event) {
+		if (!this.loading) {
+			this.loading = true;
 
-      const receivedText = event.detail.text.join("").split("<br>").filter(el => el !== "")
+			const receivedText = event.detail.text.join("").split("<br>").filter(el => el !== "")
 
-      console.log(this.loading)
-      setTimeout(() => {
-        this.loading = false;
-        // reset this.map
-        this.map = {}
-        // reset style for all locations
-        for (let i = 0; i < 100; i++) {
-          this.shadowRoot.querySelector(`#ob${i}`).setAttribute("style", "");
-        }
-        // generate random locations
-        const locations = []
-        while (locations.length < receivedText.length) {
-          const randomLocation = Math.floor(Math.random() * 100);
-          if (!locations.includes(randomLocation)) {
-            locations.push(randomLocation)
-          }
-        }
-        console.log("locations", locations);
+			setTimeout(() => {
+				this.loading = false;
+				// reset this.map
+				this.map = {}
+				// reset style for all locations
+				for (let i = 0; i < 100; i++) {
+					this.shadowRoot.querySelector(`#ob${i}`).setAttribute("style", "");
+				}
+				// generate random locations
+				const locations = []
+				while (locations.length < receivedText.length) {
+					const randomLocation = Math.floor(Math.random() * 100);
+					if (!locations.includes(randomLocation)) {
+						locations.push(randomLocation)
+					}
+				}
 
-        const colorArr = [
-          "#ff6e27",
-          "#fbf665",
-          "#73fffe",
-          "#6287f8"
-        ]
-        locations.forEach((location, idx) => {
-          this.shadowRoot.querySelector(`#ob${location}`).setAttribute("style", `border: ${colorArr[Math.floor(Math.random() * 4)]} dotted ${receivedText[idx].length}px`)
-          console.log(this.shadowRoot.querySelector(`#ob${location}`));
-        })
-      }, 1500)
-    }
-  }
+				const colorArr = [
+					"#ff6e27",
+					"#fbf665",
+					"#73fffe",
+					"#6287f8"
+				]
+				locations.forEach((location, idx) => {
+					this.shadowRoot.querySelector(`#ob${location}`).setAttribute("style", `border: ${colorArr[Math.floor(Math.random() * 4)]} dotted ${receivedText[idx].length}px`)
+				})
+			}, 1500)
+		}
+	}
 
 
-  connectedCallback() {
+	connectedCallback() {
 
-  }
+	}
 
 }
 window.customElements.define('sonar-radar', SonarRadar)

@@ -1,8 +1,49 @@
 #text-area {
-	position: relative;
-	width: 80vw;
-	height: 600px;
+	position: absolute;
+	top: 500px;
+	left: 40%;
+	right: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	height: 120px;
 	margin: 0 auto;
+	overflow: hidden;
+	color: #a5fefe;
+	border: 1px solid #73fffe;
+	border-radius: 5px;
+	font-family: "traveling__typewriterregular", Arial, Helvetica, sans-serif;
+	transition: all 0.3s ease-in-out;
+	filter: blur(2px);
+	animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+	0% {
+		box-shadow: 0 0 5px 5px #73fffe;
+	}
+	50% {
+		box-shadow: 0 0 30px 20px #73fffe;
+	}
+	100% {
+		box-shadow: 0 0 5px 5px #73fffe;
+	}
+}
+
+#text-area:focus {
 	overflow: auto;
-	color: #bd7408;
+	left: 40%;
+	width: 1200px;
+	height: 750px;
+	filter: blur(0);
+	animation: noen;
+}
+::-webkit-scrollbar {
+	width: 12px;
+}
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: #585858;
+	border: 1px solid #585858;
 }
