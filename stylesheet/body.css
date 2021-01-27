@@ -477,3 +477,6 @@ nav {
 .tooltip:hover .tooltip-text {
 	opacity: 1;
 }
+#meta {
+	visibility: hidden;
+}
