@@ -33,6 +33,7 @@
 	overflow: auto;
 	left: 40%;
 	width: 1200px;
+	max-width: 60vw;
 	height: 750px;
 	filter: blur(0);
 	animation: noen;
