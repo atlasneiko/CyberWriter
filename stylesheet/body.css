@@ -1,5 +1,6 @@
 body {
 	background-color: #10121d;
+	z-index: 5;
 }
 
 .traveling__typewriterregular {
@@ -440,6 +441,7 @@ nav {
 	left: 150px;
 	position: absolute;
 	margin-top: 15px;
+	top: 0;
 }
 .about-link {
 	height: 30px;
@@ -478,5 +480,5 @@ nav {
 	opacity: 1;
 }
 #meta {
-	visibility: hidden;
+	display: none;
 }
