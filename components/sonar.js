@@ -350,10 +350,8 @@ class SonarRadar extends HTMLElement {
 				}
 
 				const colorArr = [
-					"#ff6e27",
-					"#fbf665",
-					"#73fffe",
-					"#6287f8"
+					"#39ffae",
+					"#d7071e"
 				]
 				locations.forEach((location, idx) => {
 					this.shadowRoot.querySelector(`#ob${location}`).setAttribute("style", `border: ${colorArr[Math.floor(Math.random() * 4)]} dotted ${receivedText[idx].length}px`)

@@ -39,7 +39,7 @@ class WelcomeModal extends HTMLElement {
     this.showInfo = !this.showInfo
     const modal = this.shadowRoot.querySelector('#modal-background');
     if (this.showInfo) {
-      console.log("showing")
+      // console.log("showing")
       modal.style.display = 'block';
       // toggleBtn.innerText = "Hide Info"
     } else {

@@ -317,7 +317,7 @@ class Battery extends HTMLElement {
 			this.text = event.detail.text;
 			this.batteryCount = Math.floor(this.text.join(" ").split(" ").length / 100)
 
-			console.log()
+			// console.log()
 			// console.log(this.batteryCount)
 			let res = 0
 			for (let i = 1; i <= 50; i++) {
