@@ -44,10 +44,10 @@ button {
 
 #welcome-modal {
 	position: relative;
-	width: 50%;
+	width: 75%;
 	margin: 0 auto;
 	font-family: "audiowideregular", Arial, Helvetica;
-	top: 300px;
+	top: 100px;
 }
 
 #welcome-modal p {

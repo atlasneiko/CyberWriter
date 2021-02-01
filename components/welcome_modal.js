@@ -9,6 +9,7 @@ modalTemplate.innerHTML = `
         <span class="f-flicker">C</span>Y<span class="s-flicker">B</span><span class="f-flicker">ERW</span><span class="s-flicker">RI</span><span class="f-flicker">TER</span>
       </h1>
       <p>&nbsp;&nbsp;&nbsp;&nbsp; Due to hard drive shortage, each worker are only allowed to keep one story at a time and limited to 5000 words. It is highly advisable that workers utilize the UI to optimize their performance. All of your progress will be saved in real time. So there is no reason to panic or call tech support.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; Please take advantage of our efficiency meters on the right of the screen. The first one will be filled every time you've typed 100 words.<br/>&nbsp;&nbsp;&nbsp;&nbsp; The second meter measures your combo at the moment. Please remember that a fast writer is a good writer.<br/>&nbsp;&nbsp;&nbsp;&nbsp; The third meter shows your the structure of your work. Utilizing it to make your work more readable is highly advised.</p>
       <p>&nbsp;&nbsp;&nbsp;&nbsp;Now, get back to work.</p>
       <button class="toggle-modal close-tutorial">Get back to work</button>
     </div>
